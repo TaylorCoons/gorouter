@@ -1,3 +1,3 @@
-module github.com/TaylorCoons/gorouter
+module github.com/taylorcoons/gorouter
 
 go 1.17
