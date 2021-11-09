@@ -1,6 +1,7 @@
 package gorouter
 
 import (
+	"context"
 	"net/http"
 	"regexp"
 	"strings"
@@ -8,7 +9,7 @@ import (
 
 type PathParams map[string]string
 
-type HandlerFunc func(w http.ResponseWriter, r *http.Request, p PathParams)
+type HandlerFunc func(ctx context.Context, w http.ResponseWriter, r *http.Request, p PathParams)
 
 type Route struct {
 	Method  string

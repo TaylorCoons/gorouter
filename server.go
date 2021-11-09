@@ -1,6 +1,7 @@
 package gorouter
 
 import (
+	"context"
 	"net/http"
 	"strings"
 )
@@ -26,7 +27,8 @@ func (s Server) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 			if s.Middleware != nil {
 				s.Middleware(w, r, paramMap, route.Handler)
 			} else {
-				route.Handler(w, r, paramMap)
+				ctx := context.TODO()
+				route.Handler(ctx, w, r, paramMap)
 			}
 			return
 		}
